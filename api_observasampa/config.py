@@ -17,12 +17,13 @@ check_env_vars()
 
 # Dados do banco de dados
 db_data = {
-    'host': os.getenv('HOST'),
-    'port': os.getenv('PORT'),
-    'database': os.getenv('DB'),
-    'user': os.getenv('USER'),
-    'password': os.getenv('PASSW')
+    'host': os.environ['PGHOST'],  # Adaptar para usar PGHOST
+    'port': os.environ['PGPORT'],
+    'database': os.environ['PGDATABASE'],
+    'user': os.environ['PGUSER'],
+    'password': os.environ['PGPASSWORD']
 }
+
 
 # Construa a URL do SQLAlchemy com base nos dados do banco
 SQLALCHEMY_DATABASE_URL = build_conn_str(**db_data)
