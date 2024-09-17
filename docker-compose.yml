@@ -12,21 +12,8 @@ services:
     restart: unless-stopped
     networks:
       - api_observa_network
-
-  web:
-    container_name: nginx
-    build: nginx
     ports:
-        - 80:80
-        - 443:443
-    volumes:
-        - ${NGINX_LOGS_VOLUME}:/var/log/nginx/
-        - ${NGINX_CACHE_VOLUME}:/data/nginx/cache
-    depends_on:
-        - api_observasampa
-    networks:
-        - api_observa_network
-
+      - "8000:8000"  # Expõe a porta 8000 para o Railway
 
 networks:
   api_observa_network:
