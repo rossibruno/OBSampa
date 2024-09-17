@@ -7,7 +7,7 @@ load_dotenv()
 
 # Função para verificar se todas as variáveis de ambiente estão definidas
 def check_env_vars():
-    required_vars = ['HOST', 'PORT', 'DB', 'USER', 'PASSW', 'REQUEST_TIMEOUT_ERROR']
+    required_vars = ['PGHOST', 'PGPORT', 'PGDATABASE', 'PGUSER', 'PGPASSWORD', 'REQUEST_TIMEOUT_ERROR']
     for var in required_vars:
         if not os.getenv(var):
             raise EnvironmentError(f"Variável de ambiente '{var}' não está definida. Verifique seu arquivo .env.")
