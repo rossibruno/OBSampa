@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copie os arquivos requirements.txt e instale as dependências
-COPY COPY api_observasampa/requirements.txt requirements.txt
+COPY api_observasampa/requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copie o restante do código para o diretório de trabalho
